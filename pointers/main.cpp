@@ -1,24 +1,35 @@
-#include<iostream>
-
+#include <iostream>
 
 using namespace std;
 
+int main()
+{
+
+    int num{14};
 
 
-int main () {
+    cout << " ======================= STANDARD INTEGER ====================== \n \n \n";
 
+    cout << " the value held at num is: " << num << endl;
 
-int num{14};
+    cout << " the size of the value held in bytes is : " << sizeof(num) << endl;
 
-cout << " the value held at num is: " << num << endl;
+    cout << " the address if the integer num is : " << &num << endl;
+cout << "\n \n \n";
+    /////////////// now for pointers //////////
 
-cout << " the size of the value held in bytes is : " << sizeof(num) << endl;
+    int *pointer;
 
+    cout << " ======================= POINTER ====================== \n \n \n";
+    cout << " value of pointer is (should be address) : " << pointer << endl;
 
-cout << " the address if the integer num is : " << &num << endl;
+    cout << " the size of the address held at point in bytes  : " << sizeof(pointer) << endl;
 
-/////////////// now for pointers //////////
+    cout << " the address (that the pointer) is held at " << &pointer << endl;
 
+    pointer= nullptr;
+
+    cout << " Pointer now set to null value , pointer value is now :  " << pointer << endl;
 
     return 0;
 }
