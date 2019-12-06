@@ -31,5 +31,9 @@ cout << "\n \n \n";
 
     cout << " Pointer now set to null value , pointer value is now :  " << pointer << endl;
 
+    pointer = &num;
+
+    cout << " Pointer now is set to &num , the address of num :  value of pointer is ... : " << pointer << endl;
+
     return 0;
 }
