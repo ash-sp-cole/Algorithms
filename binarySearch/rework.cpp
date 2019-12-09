@@ -7,7 +7,7 @@
 
 
 
-void searchBinary (std::vector <int> arr , int target, int mid);
+int searchBinary (std::vector <int> arr , int target, int mid);
 
 int main () {
 
@@ -24,29 +24,40 @@ std::cout << " enter target value " << std::endl;
 
 std::cin >> target;
 
+  std::cout << " before funt ";
 
 searchBinary(arr,target,mid);
 
+
+  std::cout << " after funct \n";
 
 
     return 0;
 }
 
-
-
-void searchBinary (std::vector <int> arr, int target, int mid) {
+int searchBinary (std::vector <int> arr, int target, int mid) {
 
 int low = 0;
 int high = arr.size() -1;
 
+int times{};
+
+
 while (low <= high) {
 
-    mid = arr.size() / 2;
+    times++;
 
-    if (target = arr[mid]) {
+    mid = low + high / 2;
+
+    if (target == arr[mid]) {
 
         std::cout << " found number " << target << std::endl;
+        
+        std::cout << " times searched through  " << times << std::endl;
 
+        
+        std::cout << " found at index value " << mid << std::endl;
+        return 0;
     }
 
 
@@ -62,5 +73,5 @@ while (low <= high) {
 
     }
 }
-
+return-1;
 }
