@@ -7,7 +7,6 @@ int main()
 
     int num{14};
 
-
     cout << " ======================= STANDARD INTEGER ====================== \n \n \n";
 
     cout << " the value held at num is: " << num << endl;
@@ -15,7 +14,7 @@ int main()
     cout << " the size of the value held in bytes is : " << sizeof(num) << endl;
 
     cout << " the address if the integer num is : " << &num << endl;
-cout << "\n \n \n";
+    cout << "\n \n \n";
     /////////////// now for pointers //////////
 
     int *pointer;
@@ -27,7 +26,7 @@ cout << "\n \n \n";
 
     cout << " the address (that the pointer) is held at " << &pointer << endl;
 
-    pointer= nullptr;
+    pointer = nullptr;
 
     cout << " Pointer now set to null value , pointer value is now :  " << pointer << endl;
 
@@ -35,5 +34,9 @@ cout << "\n \n \n";
 
     cout << " Pointer now is set to &num , the address of num :  value of pointer is ... : " << pointer << endl;
 
+    *pointer = num;
+
+    cout << " set pointer to value of num, not address . Result is : " << *pointer << endl;
+    
     return 0;
 }
