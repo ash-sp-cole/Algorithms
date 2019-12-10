@@ -18,25 +18,25 @@ int main () {
 
 
 int arr[] { 1,32,12,45,33,22,66,77,88,11,7};
-int low = 0;
+
 int size = sizeof(arr) / sizeof(arr[0]);
 size_t  high = (sizeof(arr) / sizeof(arr[0])) -1;
 
 cout << "                                         \n \n \n \n \n  ";
 for (int i = 0; i < size; i++) {
 
-cout << arr[i];
+cout << arr[i] << " , ";
 
 }
 
-quickSort( arr, low, high);
+quickSort( arr, 0, high);
 
 
 cout << "                                         \n \n \n \n \n  ";
 
 for (int i = 0; i < size; i++) {
+cout << arr[i] << " , ";
 
-cout << arr[i];
 
 }
     return 0;
@@ -49,6 +49,7 @@ cout << arr[i];
 int quickSort (int arr[],int low, int high) {
 
 if (low < high) {
+
 
 int pivotPartitioned = partition(arr,low,high);
 
