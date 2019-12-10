@@ -53,7 +53,7 @@ int main()
 
         
             std::cout << " not found sorry  " << std::endl;
-        break;
+    
     }
 
     return 0;
