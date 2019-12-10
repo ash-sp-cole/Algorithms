@@ -35,7 +35,8 @@ searchBinary(arr,target,mid);
     return 0;
 }
 
-int searchBinary (std::vector <int> arr, int target, int mid) {
+int searchBinary (std::vector <int> arr, int target, int
+ mid) {
 
 int low = 0;
 int high = arr.size() -1;
