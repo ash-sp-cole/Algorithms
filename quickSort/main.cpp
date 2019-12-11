@@ -21,7 +21,7 @@ int main()
 
     // set up-------------------------------------------
 
-    int arr[]{1, 4, 2,9,7,5,44,33,77,22,1,23,876,9,0,3,23,65};
+    int arr[]{1, 4, 2,9,7,5,972,44,33,77,22,1,23,876,9,0,3,23,65};
 
     size_t n = sizeof(arr) / sizeof(arr[0]);
 
@@ -56,26 +56,34 @@ int main()
 
 // partition
 
-int partition(int arr[], int low, int high)
-{
- 
+int partition ( int arr[], int low, int high) {
+
+
     int pivot = arr[high];
+    int pIndex = (low -1);
 
-    int pIndex = (low - 1);
+    for (int j = low; j < high; j++){
+            if (arr[j] < pivot) {
 
-    for (int j = low; j <= high; j++)
-    {
-
-        if (arr[j] < pivot)
-        {
             pIndex++;
             swap(&arr[pIndex], &arr[j]);
-          
-        }
+
+            }
+
     }
 
-    swap(&arr[pIndex + 1], &arr[high]);
+    swap(&arr[pIndex+1], &arr[high]);
     return (pIndex + 1);
+
+
+
+
+
+
+
+
+
+
 }
 
 // quick sort
