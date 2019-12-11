@@ -10,6 +10,8 @@ void swap(int *a, int *b);
 
 void print(int arr[], int n);
 
+int binarySearch(int arr[], int n, int targetValue);
+
 int main()
 {
 
@@ -25,6 +27,8 @@ int main()
 
     int mid{};
 
+    int targetValue;
+
     print(arr, n);
 
     // sort ( quick sort )
@@ -32,7 +36,13 @@ int main()
     quickSort(arr, 0, high);
 
     print(arr, n);
+
     // search ( binary )
+
+    std::cout << "\n \n Please enter the value you wish to search for in our database \n enter number :   ";
+    std::cin >> targetValue;
+    std::cout << "\n\n\n\n\n ............................... Searching ---------------------------- \n \n \n \n";
+    binarySearch( arr, n, targetValue);
 
     return 0;
 }
@@ -90,4 +100,40 @@ void print(int arr[], int n)
         std::cout << "  " << arr[i];
     }
     std::cout << "\n \n \n";
+}
+
+int binarySearch(int arr[], int n, int targetValue)
+{
+    int mid{};
+    int low{0};
+    int high = n-1;
+    while (low <= high)
+    {
+ 
+         mid = (low + high) / 2;
+
+        if (arr[mid] == targetValue)
+        {
+ std::cout << "\n if ";
+            std::cout << " yes your target was found : \n target :" << targetValue << std::endl;
+            std::cout << "\n found at index : " << mid -1 << std::endl;
+            break;
+        }
+
+        else if (targetValue < arr[mid])
+        {
+
+            high = mid - 1;
+        }
+
+        else if (targetValue > arr[mid])
+        {
+            low = mid + 1;
+             
+        }
+
+      
+    }
+   
+     return 0;
 }
