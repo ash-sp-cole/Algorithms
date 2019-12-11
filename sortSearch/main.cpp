@@ -42,7 +42,7 @@ int main()
     std::cout << "\n \n Please enter the value you wish to search for in our database \n enter number :   ";
     std::cin >> targetValue;
     std::cout << "\n\n\n\n\n ............................... Searching ---------------------------- \n \n \n \n";
-    binarySearch( arr, n, targetValue);
+    binarySearch(arr, n, targetValue);
 
     return 0;
 }
@@ -106,17 +106,17 @@ int binarySearch(int arr[], int n, int targetValue)
 {
     int mid{};
     int low{0};
-    int high = n-1;
+    int high = n - 1;
     while (low <= high)
     {
- 
-         mid = (low + high) / 2;
+
+        mid = (low + high) / 2;
 
         if (arr[mid] == targetValue)
         {
- std::cout << "\n if ";
+            std::cout << "\n if ";
             std::cout << " yes your target was found : \n target :" << targetValue << std::endl;
-            std::cout << "\n found at index : " << mid -1 << std::endl;
+            std::cout << "\n found at index : " << mid - 1 << std::endl;
             break;
         }
 
@@ -129,11 +129,8 @@ int binarySearch(int arr[], int n, int targetValue)
         else if (targetValue > arr[mid])
         {
             low = mid + 1;
-             
         }
-
-      
     }
-   
-     return 0;
+
+    return 0;
 }
