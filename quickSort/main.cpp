@@ -2,96 +2,106 @@
 
 using namespace std;
 
+// partition
 
+int partition(int arr[], int low, int high);
 
+// swap
 
+void swap(int *a, int *b);
 
-int quickSort( int arr[], int low, int high);
+// quick sort
 
-int partition( int arr[], int low, int high);
+void quickSort(int arr[], int low, int high);
 
-void swap (int *a, int *b);
+// print results
 
+int main()
+{
 
+    // set up-------------------------------------------
 
-int main () {
+    int arr[]{1, 4, 2,9,7,5,44,33,77,22,1,23,876,9,0,3,23,65};
 
+    size_t n = sizeof(arr) / sizeof(arr[0]);
 
-int arr[] { 1,32,12,45,33,22,66,77,88,11,7};
+    int low{0};
 
-int size = sizeof(arr) / sizeof(arr[0]);
-size_t  high = (sizeof(arr) / sizeof(arr[0])) -1;
+    int high = n - 1;
 
-cout << "                                         \n \n \n \n \n  ";
-for (int i = 0; i < size; i++) {
+    cout << "\n unsorted list :   \n \n";
 
-cout << arr[i] << " , ";
+    for (int i = 0; i < n; i++)
+    {
 
-}
+        cout << "  " << arr[i];
+    }
 
-quickSort( arr, 0, high);
+    cout << " \n \n \n list now being sorted : \n " << endl;
 
+    // quick sort---------------------------------------------
 
-cout << "                                         \n \n \n \n \n  ";
+    quickSort(arr, 0, high);
 
-for (int i = 0; i < size; i++) {
-cout << arr[i] << " , ";
+    // print results------------------------------------------
 
+    for (int i = 0; i < n; i++)
+    {
 
-}
+        cout << "  " << arr[i];
+    }
+
     return 0;
 }
 
+// partition
 
-//////////////////////////////////// QUICK SORT ================================
-
-
-int quickSort (int arr[],int low, int high) {
-
-if (low < high) {
-
-
-int pivotPartitioned = partition(arr,low,high);
-
-
-quickSort(arr, low, pivotPartitioned -1);
-quickSort(arr,pivotPartitioned+1, high);
-
-}
-
-   return 0; 
-}
-
-
-//////////////////////////////////// PARTITION ================================
-
-int partition (int arr[], int low, int high) {
-
+int partition(int arr[], int low, int high)
+{
+ 
     int pivot = arr[high];
 
-    int i = (low -1);
+    int pIndex = (low - 1);
 
-for  ( int j = low; j <= high -1; j++){
+    for (int j = low; j <= high; j++)
+    {
 
-        if (arr[j] < pivot) {
-
-            i++;
-            swap(&arr[i], &arr[j]);
-
+        if (arr[j] < pivot)
+        {
+            pIndex++;
+            swap(&arr[pIndex], &arr[j]);
+          
         }
+    }
+
+    swap(&arr[pIndex + 1], &arr[high]);
+    return (pIndex + 1);
 }
-    swap(&arr[i+1], &arr[high]);
 
-    return (i+1);
+// quick sort
+
+void quickSort(int arr[], int low, int high)
+{
+
+    if (low < high)
+    {
+
+        int pi = partition(arr, low, high);
+
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
 }
 
-//////////////////////////////////// SWAP ================================
-
-void swap (int *a, int *b) {
+// swap
+void swap(int *a, int *b)
+{
 
     int temp = *a;
 
     *a = *b;
-   *b = temp;
 
+    *b = temp;
 }
+
+// print results
