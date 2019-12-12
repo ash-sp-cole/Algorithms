@@ -1,23 +1,29 @@
 #include <iostream>
 
 // quick sort
-
 int quickSort(int arr[], int low, int high);
 
 int partition(int arr[], int low, int high);
 
+// swap
 void swap(int *a, int *b);
+
 // binary
+int binarySearch(int arr[], int n, int targetValue);
 
 // print
-
 void print(int arr[], int n);
+
+
 
 int main()
 {
 
     // setup ===================================================
+    int targetValue{};
 
+    std::cout<< " enter target value :   \n";
+    std::cin >> targetValue;
     int arr[]{1, 4, 2, 5, 1, 6, 7, 2, 44, 11, 55, 33, 77, 55, 88, 99, 66, 133, 432, 564, 768, 14, 9};
 
     int low = {0};
@@ -36,8 +42,46 @@ int main()
 
 
     print(arr, n);
+
+    binarySearch( arr,  n,  targetValue);
     return 0;
 }
+
+
+
+
+
+// ================================================================================================
+
+
+int binarySearch(int arr[], int n, int targetValue) {
+
+
+    int low {0};
+    int high = n-1;
+    int mid{};
+
+    
+    while ( low <= high )
+ {
+        mid = (low +high) / 2;
+     if (targetValue == arr[mid]) {
+
+         std::cout <<" \n \n target found " << targetValue << std::endl;
+         std::cout << " at index : " << mid;
+            break;
+     }
+
+    else if( targetValue < arr[mid]) {
+
+            high = mid-1;
+
+    }     
+    else ( low = mid +1);
+ }
+        return 0;
+ }
+
 
 // quick sort ==================
 
