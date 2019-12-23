@@ -11,7 +11,7 @@ void swap(int *a, int *b);
 int main()
 {
 
-    int arr[]{1, 4, 3, 2, 5, 1, 44, 22, 33, 66, 77, 55, 88, 33, 22, 42, 54, 3, 54, 876, 56, 234, 411, 789, 546, 870, 11, 23, 21};
+    int arr[]{1, 4,  3, 2, 5,  44, 22, 33, 66, 77, 55, 88, 33, 22, 42, 54, 3, 54, 876, 56, 234, 411, 789, 546, 870, 11, 23, 21};
 
     size_t n = sizeof(arr) / sizeof(arr[0]);
 
@@ -21,6 +21,17 @@ int main()
 
     std::cout << " \n \n \nhere is your unsorted list :  \n \n";
 
+      int sum {};
+
+    for (int i =0; i <n; i ++) {
+
+        sum+=arr[i];
+
+    }
+
+    std::cout << "\n \n";
+    printf("%i  total is  : ", sum);
+
     print(arr, n);
 
     std::cout << " \n \n \n now sorting ..................." << std::endl;
@@ -28,6 +39,8 @@ int main()
     quickSort(arr, 0, high);
 
     print(arr, n);
+
+  
 
     return 0;
 }
@@ -48,7 +61,7 @@ void quickSort(int arr[], int low, int high)
     if (low < high)
     {
 
-        int pi = partition(arr,low,high);
+        int pi = partition(arr, low, high);
 
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);

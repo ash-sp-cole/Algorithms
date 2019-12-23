@@ -57,8 +57,6 @@ int main()
 // partition
 
 int partition ( int arr[], int low, int high) {
-
-
     int pivot = arr[high];
     int pIndex = (low -1);
 
