@@ -11,7 +11,7 @@ void swap(int *a, int *b);
 int main()
 {
 
-    int arr[]{1, 4,  3, 2, 5,  44, 22, 33, 66, 77, 55, 88, 33, 22, 42, 54, 3, 54, 876, 56, 234, 411, 789, 546, 870, 11, 23, 21};
+    int arr[]{1, 4, 3, 2, 5, 44, 22, 33, 66, 7777, 55, 88, 33, 22, 42, 54, 3, 54, 876, 56, 234, 411, 789, 546, 870, 11, 23, 21};
 
     size_t n = sizeof(arr) / sizeof(arr[0]);
 
@@ -21,12 +21,12 @@ int main()
 
     std::cout << " \n \n \nhere is your unsorted list :  \n \n";
 
-      int sum {};
+    int sum{};
 
-    for (int i =0; i <n; i ++) {
+    for (int i = 0; i < n; i++)
+    {
 
-        sum+=arr[i];
-
+        sum += arr[i];
     }
 
     std::cout << "\n \n";
@@ -39,8 +39,6 @@ int main()
     quickSort(arr, 0, high);
 
     print(arr, n);
-
-  
 
     return 0;
 }
@@ -62,7 +60,6 @@ void quickSort(int arr[], int low, int high)
     {
 
         int pi = partition(arr, low, high);
-
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);
     }
@@ -72,7 +69,6 @@ int partition(int arr[], int low, int high)
 {
 
     int pIndex = (low - 1);
-
     int pivot = arr[high];
 
     for (int j = low; j < high; j++)
@@ -81,13 +77,12 @@ int partition(int arr[], int low, int high)
         if (arr[j] < pivot)
         {
             pIndex++;
-            swap(&arr[pIndex], &arr[j]);
+            swap(&arr[j], &arr[pIndex]);
         }
     }
 
-    swap(&arr[pIndex + 1], &arr[high]);
-
-    return pIndex + 1;
+    swap (&arr[pIndex+1], &arr[high]);
+return (pIndex+1);
 }
 
 void swap(int *a, int *b)
