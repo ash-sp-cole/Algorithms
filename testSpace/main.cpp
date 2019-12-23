@@ -1,31 +1,86 @@
 #include <iostream>
 
+void print(int arr[], size_t n);
 
-using namespace std;
+void quickSort(int arr[], int low, int high);
 
+int partition(int arr[], int low, int high);
 
-int main () {
+void swap(int *a, int *b);
 
-int arr[] {1,2,3,4,5,6,7,9,10,11};
+int main()
+{
 
-size_t n = sizeof(arr) / sizeof(arr[0]);
+    int arr[]{1, 4, 3, 2, 5, 1, 44, 22, 33, 66, 77, 55, 88, 33, 22, 42, 54, 3, 54, 876, 56, 234, 411, 789, 546, 870, 11, 23, 21};
 
-int sum = (n +1) * (n +2) / 2;
+    size_t n = sizeof(arr) / sizeof(arr[0]);
 
-int result {};
- 
-for ( int i = 0; i < n; i++) {
+    int low{0};
 
-    result+=arr[i];
+    int high = (n - 1);
 
+    std::cout << " \n \n \nhere is your unsorted list :  \n \n";
+
+    print(arr, n);
+
+    std::cout << " \n \n \n now sorting ..................." << std::endl;
+
+    quickSort(arr, 0, high);
+
+    print(arr, n);
+
+    return 0;
 }
 
-sum = (sum - result);
+void print(int arr[], size_t n)
+{
 
-cout << "\n" << n << " " << sum;
+    for (int i = 0; i < n; i++)
+    {
 
-return 0;
+        printf("%d  ", arr[i]);
+    }
+}
 
+void quickSort(int arr[], int low, int high)
+{
 
+    if (low < high)
+    {
 
+        int pi = partition(arr,low,high);
+
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+int partition(int arr[], int low, int high)
+{
+
+    int pIndex = (low - 1);
+
+    int pivot = arr[high];
+
+    for (int j = low; j < high; j++)
+    {
+
+        if (arr[j] < pivot)
+        {
+            pIndex++;
+            swap(&arr[pIndex], &arr[j]);
+        }
+    }
+
+    swap(&arr[pIndex + 1], &arr[high]);
+
+    return pIndex + 1;
+}
+
+void swap(int *a, int *b)
+{
+
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
