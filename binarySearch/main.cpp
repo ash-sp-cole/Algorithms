@@ -1,60 +1,68 @@
 #include <iostream>
-#include <vector>
 
 
-int target(int arr[], int size, int targetValue);
-
-int binarySearch(int arr[], int size, int targetValue);
-
-int main()
-{
-
-  std::vector <int> arr{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-
-    int targetValue{};
-
-    int mid{};
-
-    int low{0};
-
-    size_t n = sizeof(arr) / sizeof(arr[0]);
-
-    int high = arr.size() -1;
-
-    std::cout << " enter target value \n ";
-
-    std::cin >> targetValue;
-
-    std::cout << " \n \n ";
-
-    while (low <= high)
-    {
 
 
-        mid = (low + high )/2;
-        if (targetValue == arr[mid])
-        {
+void binarySearch (int arr[], int low, int high, int searchTarget);
 
-            std::cout << " found your target of " << arr[mid] << " at index " << mid << std::endl;
-            break;
-        }
 
-        else if (targetValue < arr[mid])
-        {
+///////////////////////////////////////////////////////---- pre processor 
 
-            high = mid - 1;
-        }
 
-        else
-        {
+int main () {
 
-            mid = low + 1;
-        }
+int arr[] {1,2,3,4,5,6,7,8,9,10,11,22,33,44,55,66,77,88,99};
 
-        
-            std::cout << " not found sorry  " << std::endl;
+size_t n = sizeof(arr) / sizeof(arr[0]);
+
+int high = (n -1);
+
+int low {};
+
+int searchTarget{};
+
+std::cout << " please enter the value you wish to search for " << std::endl;
+
+std::cin >> searchTarget;
+
+std::cout << "\n \n \n ........................................Searching ..................." << std::endl;
+
+binarySearch(arr,0,high,searchTarget);
+
+return 0;
+
+
+}
+
+
+void binarySearch (int arr[], int low, int high, int searchTarget) {
+
+
+
+
+while ( low <= high) {
+
+   int  mid = (low + high) / 2 ;
+
+   if (arr[mid] == searchTarget) {
+
+       std::cout << "number found at index " << mid << " vaule is  " << arr[mid];
+       break;
+
+   }
+
+    else if (arr[mid] < searchTarget) {
+        low = mid +1;
+
+    }
     
+    else {
+        high = mid -1;
     }
 
-    return 0;
 }
+
+    
+}
+
+

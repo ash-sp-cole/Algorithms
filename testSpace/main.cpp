@@ -13,7 +13,7 @@ size_t n = sizeof(arr) / sizeof(arr[0]);
 int sum = (n +1) * (n +2) / 2;
 
 int result {};
-
+ 
 for ( int i = 0; i < n; i++) {
 
     result+=arr[i];
