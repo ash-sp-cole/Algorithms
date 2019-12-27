@@ -26,7 +26,7 @@ std::cout << "\n searching for duplicates ......................................
 
 
 
-for (int i = 0; i < n; i++) 
+for (int i = 0; i < n; i++) {
 
             for (int j = i+1; j < n; ) {
                     
@@ -42,10 +42,11 @@ for (int i = 0; i < n; i++)
                 n--;
                     }
      else{ j++;}
+            
             }
 
 
-
+}
 for (int i = 0; i <n; i++){
 
     std::cout << "  " << arr[i];
