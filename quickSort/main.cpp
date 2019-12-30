@@ -73,14 +73,6 @@ int partition ( int arr[], int low, int high) {
     swap(&arr[pIndex+1], &arr[high]);
     return (pIndex + 1);
 
-
-
-
-
-
-
-
-
 }
 
 // quick sort

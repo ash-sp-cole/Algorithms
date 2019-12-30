@@ -1,55 +1,93 @@
 #include <iostream>
 
-int main()
-{
+void swap(int *a, int *b);
 
-    int arr[]{1, 2, 2, 3, 3,4, 5, 6, 4, 6, 4, 4, 4, 7};
+void print (int arr[], int n);
 
-    size_t n = sizeof(arr) / sizeof(arr[0]);
+void quickSort(int arr[],int low, int high);
 
-    std::cout << " size of array is " << n << std::endl;
-
-    for (int i = 0; i < n; i++)
-    {
-
-        std::cout << arr[i] << "  ";
-    }
-
-    std::cout << " sorting array for possible duplicates" << std::endl;
-
-    for (int i = 0; i < n; i++)
-       for (int k = i+1; k < n;)
-        {
-
-            if (arr[i] == arr[k])
-            {
-
-               
-                    for (int j = k; j < n-1; j++){
-                        
-                        arr[j] =arr[j+1];
-                    }
+int partition (int arr[], int low, int high);
 
 
-                        n--;
 
-                       
-                    
 
-            }
-           else {
-               k++;
-           }
-        }
- 
+int main () {
 
-    std::cout << "\n size of array is " << n << std::endl;
+std::cout << "  \n \n \n QuickSOrt algorithm \n \n \n";
 
-    for (int i = 0; i < n; i++)
-    {
+int arr[] {1,4,3,2,5,4,33,2,4343,11,22,33,55,33,88,55,77,66,44,99,78,665,342,2,765,777,43,77};
 
-        std::cout << arr[i] << "  ";
-    }
+size_t n = sizeof(arr) / sizeof (arr[0]);
+
+int low = 0;
+
+int high= (n-1);
+
+print (arr,n);
+
+
+std::cout << " \n \n now sorting your array ............................................................................ \n \n" << std::endl;
+
+quickSort(arr,0,high);
+
+print (arr,n);
 
     return 0;
+}
+
+
+
+void swap(int *a, int *b) {
+
+
+int temp = *a;
+*a = *b;
+*b = temp;
+}
+
+
+
+void print (int arr[], int n) {
+
+for (int i = 0; i < n; i ++) {
+
+    std::cout << " " << arr[i];
+
+}
+}
+
+
+void quickSort(int arr[], int low, int high) {
+
+
+  if ( low < high) {
+
+        int pi = partition(arr,low,high);
+
+      quickSort(arr, low, pi-1);
+        quickSort(arr,pi +1, high);
+      
+
+
+    }
+}
+
+
+int partition (int arr[], int low, int high) {
+
+        int pIndex = (low -1);
+        int pivot = arr[high];
+
+        for (int i = low; i < high; i ++) {
+
+                if (arr[i] < arr[high]) {
+                    pIndex++;
+                    swap(&arr[pIndex],&arr[i]);
+                }
+         
+         
+            
+        }
+ swap(&arr[pIndex+1], &arr[high]);
+return (pIndex+1);
 }
