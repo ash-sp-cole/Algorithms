@@ -55,8 +55,18 @@ else if ( arr[mid] > searchTarget) {
 }
 else if (arr[mid] == searchTarget) {
 
+<<<<<<< HEAD
     std::cout << "value found at " << arr[mid] <<  "   " << mid;
         break;
+=======
+    }
+    
+    else {
+        high = (mid -1);
+    }
+>>>>>>> 266df16636c97167b9b2d94fe9b732a4fa75d518
+
+
 
 }
 
