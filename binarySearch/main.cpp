@@ -38,31 +38,30 @@ return 0;
 void binarySearch (int arr[], int low, int high, int searchTarget) {
 
 
+        while ( low <= high)
+ {
 
 
-while ( low <= high) {
+int mid = (low+high) /2;
 
-   int  mid = (low + high) / 2 ;
+if (arr[mid] < searchTarget) {
 
-   if (arr[mid] == searchTarget) {
+    low= mid-1;
+}
+else if ( arr[mid] > searchTarget) {
 
-       std::cout << "number found at index " << mid << " vaule is  " << arr[mid];
-       break;
+    high = mid +1;
 
-   }
+}
+else if (arr[mid] == searchTarget) {
 
-    else if (arr[mid] < searchTarget) {
-        low = mid +1;
-
-    }
-    
-    else {
-        high = mid -1;
-    }
+    std::cout << "value found at " << arr[mid] <<  "   " << mid;
+        break;
 
 }
 
-    
+} 
+
 }
 
 

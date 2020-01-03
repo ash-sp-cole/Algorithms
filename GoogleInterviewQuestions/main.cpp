@@ -6,9 +6,9 @@ using namespace std;
 int main () {
 
 
-int arr[] {1,2,3,4,5,7};
+int arr[] {1,2,3,4,5,7,9};
 
-int target {6};
+int target {13};
 
 int low = 0;
 
