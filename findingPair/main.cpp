@@ -35,7 +35,7 @@ int main()
         else{
 
 
-            high++;
+            high--;
         }
     }
 
