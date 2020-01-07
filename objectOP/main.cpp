@@ -15,10 +15,16 @@ void setBalance(int balance);
 
 
 };
-
-
+ 
 
 int main () {
+
+
+void Account::printBalance(){
+cout<< balance;
+
+}
+
 
 return 0;
 
