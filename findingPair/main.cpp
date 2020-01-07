@@ -16,10 +16,19 @@ int high{};
 
 // while loop to start loop
 
+while (low < high) {
+
+        if (arr[low] + arr[high] == target) std::cout << " target met in array ." << arr[high] << "  and  " << arr[low] << std::endl;    
+    
+
+            else if (arr[low] + arr[high] < target) {
+                low++;
+            }
+
+            else high++;
 
 
-
-// if low + high do not = target do ....
+}
 
 
 
