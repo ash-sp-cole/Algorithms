@@ -9,7 +9,7 @@ int main()
 
     size_t n = sizeof(arr) / sizeof(arr[0]);
 
-    int low{};
+    int low{0};
 
     int high = n - 1;
 
