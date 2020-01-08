@@ -19,9 +19,6 @@ void quickSort(int arr[], int low, int high);
 int main()
 {
 
-    // set up-------------------------------------------
-
-
 
 
     int arr[]{1, 4, 2,9,7,5,972,44,33,77,22,1,23,65};
@@ -42,11 +39,11 @@ int main()
 
     cout << " \n \n \n list now being sorted : \n " << endl;
 
-    // quick sort---------------------------------------------
+   
 
     quickSort(arr, 0, high);
 
-    // print results------------------------------------------
+
 
     for (int i = 0; i < n; i++)
     {
@@ -57,7 +54,7 @@ int main()
     return 0;
 }
 
-// partition
+
 
 int partition ( int arr[], int low, int high) {
     int pivot = arr[high];
