@@ -15,7 +15,13 @@ Node *right{};
 
 };
 
+class Node* NewNode(int data) {
 
+Node* node = new
+
+
+
+};
 
 
 
