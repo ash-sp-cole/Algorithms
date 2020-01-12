@@ -1,59 +1,36 @@
 #include <iostream>
 
-
 using namespace std;
 
+int main()
+{
 
+    int arr[]{1, 4, 3, 2, 5, 7, 4, 2, 3, 1};
 
-int main () {
+    size_t n = sizeof(arr) / sizeof(arr[0]);
+    int j{};
+    int key{};
+    for (int i = 1; i < n; i++)
+    {
 
-int arr[] { 1,4,3,2,5,7,4,2,3,1};
+        key = arr[i];
 
-size_t n = sizeof(arr) /sizeof(arr[0]);
+         j = (i - 1);
 
+        while (j >= 0 && arr[j] > key)
+        {
 
-int key{};
-for (int i = 0; i <n; i++) {
-
-key =arr[i];
-
-int j = (i -1);
-
-    while (j <= 0 && arr[j]> key) {
-
-        arr[j+1] = arr[j];
-        j = j-1;
-
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
     }
-        arr[j +1 ] = key;
 
+    for (int k = 0; k < n; k++)
+    {
 
-
-
-
-
-
-
-
-
-}
-
-
-for (int k =0; k < n; k++){
-
-cout << " " << arr[k];
-
-}
-
-
-
-
-
-
-
-
-
-
+        cout << " " << arr[k];
+    }
 
     return 0;
 }
