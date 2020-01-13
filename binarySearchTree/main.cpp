@@ -1,46 +1,46 @@
 #include <iostream>
 
 
+
 using namespace std;
-
-
-class Node{
-
-public:
-
+struct Node {
 
 int data{};
-Node *left{};
-Node *right{};
+
+Node* next{};
 
 };
-
-class Node* NewNode(int data) {
-
-Node* node = new
-
-
-
-};
-
 
 
 
 int main () {
 
 
+Node* head = NULL;
+Node* second = NULL;
+Node* third = NULL;
 
-cout << " test bst" ;
-
-
-
-
-
-
-
+head = new Node();
+second = new Node();
+third = new Node();
 
 
 
+head->data = 1;
+head->next = second;
 
-    return 0 ;
+second->data = 2;
+second->next =third;
+
+third->data =7;
+third->next = NULL;
+
+
+while (head != NULL);
+    cout << "  node value " << head->data;
+    head = head->next;
+
+
+
+    return 0;
 }
