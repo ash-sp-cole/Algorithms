@@ -36,10 +36,10 @@ third->data =7;
 third->next = NULL;
 
 
-while (head != NULL);
+while (head != NULL){
     cout << "  node value " << head->data;
     head = head->next;
-
+}
 
 
     return 0;
