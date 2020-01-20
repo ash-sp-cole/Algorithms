@@ -2,76 +2,40 @@
 
 
 
-
-void binarySearch (int arr[], int low, int high, int searchTarget);
-
-
-///////////////////////////////////////////////////////---- pre processor 
-
-
 int main () {
 
-int arr[] {1,2,3,4,5,6,7,8,9,10,11,22,33,44,55,66,77,88,99};
+int arr[] { 1,2,3,4,5,6,7,8,9};
 
-size_t n = sizeof(arr) / sizeof(arr[0]);
+size_t n  =  sizeof(arr) / sizeof(arr[0]);
+int target{};
+int low {0};
+int high = (n -1 );
+int mid {};
+std::cout << " please enter tagert value \n \n" << std::endl;
+std::cin >> target;
+std::cout << " \ n" << std::endl;
 
-int high = (n -1);
+while (low <= high) {
 
-int low {};
-
-int searchTarget{};
-
-std::cout << " please enter the value you wish to search for " << std::endl;
-
-std::cin >> searchTarget;
-
-std::cout << "\n \n \n ........................................Searching ..................." << std::endl;
-
-binarySearch(arr,0,high,searchTarget);
-
-return 0;
+mid = (low + high) / 2;
 
 
-}
 
 
-void binarySearch (int arr[], int low, int high, int searchTarget) {
 
 
-        while ( low <= high)
- {
 
-
-int mid = (low+high) /2;
-
-if (arr[mid] < searchTarget) {
-
-    low= mid-1;
-}
-else if ( arr[mid] > searchTarget) {
-
-    high = mid +1;
-
-}
-else if (arr[mid] == searchTarget) {
-
-<<<<<<< HEAD
-    std::cout << "value found at " << arr[mid] <<  "   " << mid;
-        break;
-=======
-    }
-    
-    else {
-        high = (mid -1);
-    }
->>>>>>> 266df16636c97167b9b2d94fe9b732a4fa75d518
 
 
 
 }
 
-} 
 
+
+
+
+
+
+
+    return 0;
 }
-
-
