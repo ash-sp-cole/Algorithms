@@ -14,12 +14,9 @@ int main()
     int high = n - 1;
 
     // while loop to start loop
-
     low = 0;
-
     while (low < high)
     {
-
         if (arr[low] + arr[high] == target)
         {
             std::cout << " target met in array " << arr[high] << "  and  " << arr[low] << std::endl;
