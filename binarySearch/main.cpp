@@ -2,7 +2,7 @@
 
 int main () {
 
-int arr[] { 1,2,3,4,5,6,7,8,9};
+int arr[] { 1,2,3,4,5,6,9};
 
 size_t n  =  sizeof(arr) / sizeof(arr[0]);
 int target{};
