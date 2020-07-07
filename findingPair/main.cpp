@@ -30,7 +30,6 @@ int main()
 
         else{
 
-
             high--;
         }
     }
