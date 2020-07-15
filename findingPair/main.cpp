@@ -10,7 +10,7 @@ int main()
 
     int low{0};
 
-    int high = n - 1;
+    int high= n - 1;
 
     // while loop to start loop
     low = 0;
@@ -21,7 +21,6 @@ int main()
             std::cout << " target met in array " << arr[high] << "  and  " << arr[low] << std::endl;
            break;
         }
-
         else if (arr[low] + arr[high] < target)
         {
 
